@@ -22,7 +22,7 @@ sceneManager = SceneManager()
 # sceneManager.addScene(Scene(BouncingSquares(1,1,20,p), 10))
 # sceneManager.addScene(Scene(BouncingSquares(4,4,10,p), 10))
 # sceneManager.addScene(Scene(BouncingSquares(3,3,20,p), 10))
-sceneManager.addScene(Scene(ColorLerp(0.05,p), 20))
+sceneManager.addScene(Scene(ColorLerp(0.1,p), 20))
 
 
 def setup():
