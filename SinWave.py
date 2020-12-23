@@ -7,8 +7,8 @@ class SinWave:
     def __init__(self, p):
         self.panel = p
         self.size = self.panel.width
-        self.waveHeight = 4.0
-        self.speed = 0.2
+        self.waveHeight = 5.0
+        self.speed = 0.1
         self.pixels1 = []
         self.pixels2 = []
         for i in range(self.size):
@@ -32,13 +32,14 @@ class SinWave:
         maxY = round(self.panel.height / 3) + self.waveHeight
         minY = round(self.panel.height / 3) + (self.waveHeight * -1)
         for xVal in range(len(self.pixels1)):
+            #xVal += -self.panel.width / 2
             p = self.pixels1[xVal]
             yVal = round(self.panel.height / 3) + round(math.sin(xVal * t) * self.waveHeight)
             c = (yVal-maxY) / ((maxY - minY) * 1.0)
             c = abs(c)
-            rVal = self.lerp(255,0,c)
-            gVal = self.lerp(255,255, c)
-            bVal = self.lerp(0,234,c)
+            rVal = self.lerp(255,255,c)
+            gVal = self.lerp(0,255, c)
+            bVal = self.lerp(247,0,c)
             p = (rVal, gVal, bVal)
             self.panel.setPixel(xVal,yVal,p,1)
         maxY = (1-round(self.panel.height / 3)) + self.waveHeight
@@ -50,9 +51,9 @@ class SinWave:
             c = abs(c)
             #226, 8, 255
             #15, 255, 51
-            rVal = self.lerp(0,226,c)
-            gVal = self.lerp(255,8, c)
-            bVal = self.lerp(0,255,c)
+            rVal = self.lerp(0,255,c)
+            gVal = self.lerp(255,0, c)
+            bVal = self.lerp(238,68,c)
             
             p = (rVal, gVal, bVal)
             self.panel.setPixel(xVal,yVal,p,1)

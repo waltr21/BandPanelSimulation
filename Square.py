@@ -20,8 +20,8 @@ class Square:
         self.velocity = (random.uniform(1.0,2.0), random.uniform(1.0,2.0))
 
         #self.brightness = random.random()
-        self.brightness = 0.9
-        self.bAdjust = 0.01
+        self.brightness = 1.0
+        self.bAdjust = 1.0
 
     def update(self):
         # Move by x and y from velocity
@@ -52,8 +52,8 @@ class Square:
             self.bAdjust *= -1
 
     def show(self):
-        roundX = round(self.x)
-        roundY = round(self.y)
+        roundX = int(self.x)
+        roundY = int(self.y)
         for curX in range(roundX, roundX + self.width):
             for curY in range(roundY, roundY + self.height):
                 self.panel.setPixel(curX, curY, self.col, self.brightness)

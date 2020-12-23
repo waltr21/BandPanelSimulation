@@ -23,5 +23,3 @@ class ImgSizer:
             for j in range(self.height):
                 self.panelRef.setPixel(i,j,all_pixels[count],0.2)
                 count += 1
-
-

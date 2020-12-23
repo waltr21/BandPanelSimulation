@@ -45,6 +45,7 @@ class Panel:
             for x in range(self.width):
                 c = self.grid[x][y]
                 fill(c)
+                stroke(color(30,30,30))
                 ellipse(xPos,yPos,eSize,eSize)
                 xPos += xIncr
             xPos = xStart
